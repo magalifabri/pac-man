@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --view-port-height: 0;
+  --pac-man-color: rgb(230, 180, 19);
+}
+
+body {
+  overscroll-behavior: contain;
+  height: var(--view-port-height);
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f7f4f2;
+  color: #11052c;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 20px;
+}
+
+p {
+  margin: 10px;
+}
+
+.game-field-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding: 30px;
+  text-transform: uppercase;
+  border-top: 1px solid #11052c;
+  border-bottom: 1px solid #11052c;
+}
+.message .back {
+  margin-right: auto;
+  width: 20px;
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #11052c;
+}
+.message.default {
+  display: block;
+  background-color: #f7f4f2;
+}
+.message.game-over {
+  background-color: #11052c;
+  color: #f7f4f2;
+}
+.message.game-over .back {
+  color: #f7f4f2;
+}
+.message.win {
+  background-color: #f7f4f2;
+}
+
+.game-field {
+  height: min(100vw, var(--view-port-height));
+  width: min(100vw, var(--view-port-height));
+  padding: 10px;
+  display: grid;
+  grid-template-rows: repeat(28, 1fr);
+  grid-template-columns: repeat(28, 1fr);
+}
+.game-field .type-0 {
+  position: relative;
+}
+.game-field .type-0::before {
+  content: "";
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  height: 30%;
+  width: 30%;
+  background-color: #817a65;
+  border-radius: 50%;
+  display: inline-block;
+}
+.game-field .type-1 {
+  border: min(0.5vw, 0.5vh) solid #f7f4f2;
+  background-color: #b3c0bb;
+  border-radius: min(0.5vw, 0.5vh);
+}
+.game-field .type-1 > .type-2 {
+  background-color: #f7f4f2;
+}
+.game-field .type-3 {
+  background-color: #f7f4f2;
+  position: relative;
+}
+.game-field .type-3::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+  background-color: #817a65;
+  border-radius: 50%;
+  display: inline-block;
+}
+.game-field .type-4 {
+  background-color: #f7f4f2;
+}
+.game-field .pac-man {
+  position: relative;
+  background-color: var(--pac-man-color);
+  border-radius: 50%;
+}
+.game-field .pac-man::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  bottom: 0;
+  right: 0;
+  background-color: #f7f4f2;
+}
+.game-field .pac-man.d {
+  transform: rotate(-45deg);
+}
+.game-field .pac-man.a {
+  transform: rotate(135deg);
+}
+.game-field .pac-man.w {
+  transform: rotate(225deg);
+}
+.game-field .pac-man.s {
+  transform: rotate(45deg);
+}
+.game-field .ghost {
+  border: 1px solid #f7f4f2;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  position: relative;
+}
+.game-field .ghost::before {
+  content: "";
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  height: 30%;
+  width: 30%;
+  background-color: #f7f4f2;
+  border-radius: 50%;
+  display: inline-block;
+}
+.game-field .Blinky {
+  background-color: #b44949;
+}
+.game-field .Pinky {
+  background-color: #d870a0;
+}
+.game-field .Inky {
+  background-color: #2db9b9;
+}
+.game-field .Clyde {
+  background-color: #d19931;
+}
+.game-field .BoneGrinder {
+  background-color: black;
+}
+.game-field .BoneGrinder::before {
+  background-color: red;
+}
+.game-field .afraid {
+  background-color: #8066df;
+}
+.game-field .skull {
+  background-image: url("../images/human-skull.png");
+  background-size: cover;
+}
+
+/*# sourceMappingURL=style.css.map */
