@@ -11,13 +11,16 @@
     <meta property="og:url" content="https://becodeorg.github.io/verou-3-end-with-a-bang-arcade/pac-man/index.html" />
     <meta property="og:image" content="https://becodeorg.github.io/verou-3-end-with-a-bang-arcade/img/pacMan.png" />
 
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <!-- <link rel="icon" type="image/x-icon" href="../favicon.ico"> -->
     <link rel="stylesheet" href="./sass/style.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-17NGQKFE65"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-17NGQKFE65');
