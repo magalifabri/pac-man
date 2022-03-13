@@ -37,6 +37,19 @@ p {
   margin: 10px;
 }
 
+.scoreboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #11052c;
+  z-index: 2;
+}
+.scoreboard.hidden {
+  display: none;
+}
+
 .game-field-container {
   display: flex;
   justify-content: center;

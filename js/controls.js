@@ -49,14 +49,16 @@ const handleMovementInput = (pressedKey) => {
 export const handleKeyEvent = (event) => {
     const pressedKey = event.key;
     if (!game.gameRunning) {
-        if (pressedKey === "ArrowUp"
-            || pressedKey === "w"
-            || pressedKey === "ArrowLeft"
-            || pressedKey === "a"
-            || pressedKey === "ArrowDown"
-            || pressedKey === "s"
-            || pressedKey === "ArrowRight"
-            || pressedKey === "d") {
+        if (!game.scoreboardOpen
+            && (pressedKey === "ArrowUp"
+                || pressedKey === "w"
+                || pressedKey === "ArrowLeft"
+                || pressedKey === "a"
+                || pressedKey === "ArrowDown"
+                || pressedKey === "s"
+                || pressedKey === "ArrowRight"
+                || pressedKey === "d")) {
+
             runGame();
         }
     } else {
@@ -65,7 +67,7 @@ export const handleKeyEvent = (event) => {
 }
 
 
-// ----- KEYBOARD CONTROLS -----
+// ----- TOUCH CONTROLS -----
 // https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android
 
 let xDown = null;

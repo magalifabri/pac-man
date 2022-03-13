@@ -45,6 +45,7 @@ export const game = {
     startingFoodAmount: gameFieldLayout.filter(x => x == 0).length,
     pathFindingIntervalID: undefined,
     foodRemaining: undefined,
+    scoreboardOpen: false,
 };
 game.firstSpeedIncrease = Math.floor(game.startingFoodAmount * .75);
 game.secondSpeedIncrease = Math.floor(game.startingFoodAmount * .5);
@@ -58,7 +59,11 @@ export const pacMan = {
 }
 
 const domElems = {
+    showScoreboardButton: document.querySelector(".show-scoreboard"),
+    scoreboardDiv: document.querySelector(".scoreboard"),
+    closeScoreboardButton: document.querySelector(".close-scoreboard"),
     messageDiv: document.querySelector(".message"),
+    messageContentDiv: document.querySelector(".message .variable-content"),
     gameOverScoreP: document.querySelector(".game-over .score"),
     winScoreP: document.querySelector(".win .score"),
     gameFieldGrid: document.querySelector(".game-field"),
@@ -109,7 +114,7 @@ export const endGame = (status) => {
 
     if (status === WIN) {
         audios.win.play();
-        domElems.messageDiv.innerHTML = `
+        domElems.messageContentDiv.innerHTML = `
             <h2>you win!</h2>
             <p class="score">score: ${game.score} / win-streak: ${game.numberOfWins}</p>
             <p>move to continue</p>
@@ -119,7 +124,7 @@ export const endGame = (status) => {
         game.numberOfWins++;
     } else {
         audios.gameOver.play();
-        domElems.messageDiv.innerHTML = `
+        domElems.messageContentDiv.innerHTML = `
             <h2>game over!</h2>
             <p class="score">score: ${game.score} / win-streak: ${game.numberOfWins}</p>
             <p>move to play again</p>
@@ -330,3 +335,12 @@ window.addEventListener("keydown", handleKeyEvent);
 
 document.addEventListener("touchstart", handleTouchStart);
 document.addEventListener("touchmove", handleTouchMove);
+
+domElems.showScoreboardButton.addEventListener("click", () => {
+    domElems.scoreboardDiv.classList.remove("hidden");
+    game.scoreboardOpen = true;
+});
+domElems.closeScoreboardButton.addEventListener("click", () => {
+    domElems.scoreboardDiv.classList.add("hidden");
+    game.scoreboardOpen = false;
+});
