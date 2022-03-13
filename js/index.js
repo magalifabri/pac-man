@@ -107,6 +107,13 @@ const refreshGameField = () => {
 };
 
 
+const submitScore = () => {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", `./php/submitScore.php?score=${game.score}`);
+    xhttp.send();
+};
+
 export const endGame = (status) => {
     window.removeEventListener("keydown", handleKeyEvent);
     document.removeEventListener("touchstart", handleTouchStart, false);
@@ -143,6 +150,8 @@ export const endGame = (status) => {
         document.addEventListener("touchstart", handleTouchStart, false);
         document.addEventListener("touchmove", handleTouchMove, false);
     }, 1000);
+
+    submitScore();
 }
 
 
