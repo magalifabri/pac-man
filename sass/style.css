@@ -44,38 +44,17 @@ p {
 }
 
 .message {
-  display: none;
   position: absolute;
   z-index: 1;
   width: 100%;
   padding: 30px;
+  background-color: #f7f4f2;
   text-transform: uppercase;
   border-top: 1px solid #11052c;
   border-bottom: 1px solid #11052c;
 }
-.message .back {
-  margin-right: auto;
-  width: 20px;
-  display: block;
-  text-decoration: none;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #11052c;
-}
-.message.default {
-  display: block;
-  background-color: #f7f4f2;
-}
-.message.game-over {
-  background-color: #11052c;
-  color: #f7f4f2;
-}
-.message.game-over .back {
-  color: #f7f4f2;
-}
-.message.win {
-  background-color: #f7f4f2;
+.message.hidden {
+  display: none;
 }
 
 .game-field {

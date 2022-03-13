@@ -58,9 +58,7 @@ export const pacMan = {
 }
 
 const domElems = {
-    defaultMessageDiv: document.querySelector(".default"),
-    gameOverMessageDiv: document.querySelector(".game-over"),
-    winMessageDiv: document.querySelector(".win"),
+    messageDiv: document.querySelector(".message"),
     gameOverScoreP: document.querySelector(".game-over .score"),
     winScoreP: document.querySelector(".win .score"),
     gameFieldGrid: document.querySelector(".game-field"),
@@ -111,15 +109,23 @@ export const endGame = (status) => {
 
     if (status === WIN) {
         audios.win.play();
-        domElems.winMessageDiv.style.display = "block";
+        domElems.messageDiv.innerHTML = `
+            <h2>you win!</h2>
+            <p class="score">score: ${game.score} / win-streak: ${game.numberOfWins}</p>
+            <p>move to continue</p>
+        `;
+        domElems.messageDiv.classList.remove("hidden");
         game.statusPrevGame = WIN;
         game.numberOfWins++;
-        domElems.winScoreP.textContent = "score: " + game.score + " / win-streak: " + game.numberOfWins;
     } else {
         audios.gameOver.play();
-        domElems.gameOverMessageDiv.style.display = "block";
+        domElems.messageDiv.innerHTML = `
+            <h2>game over!</h2>
+            <p class="score">score: ${game.score} / win-streak: ${game.numberOfWins}</p>
+            <p>move to play again</p>
+        `;
+        domElems.messageDiv.classList.remove("hidden");
         game.statusPrevGame = GAME_OVER;
-        domElems.gameOverScoreP.textContent = "score: " + game.score + " / win-streak: " + game.numberOfWins;
         cells[pacMan.location].className = "skull";
     }
 
@@ -282,9 +288,7 @@ export const runGame = () => {
 
     game.foodRemaining = game.startingFoodAmount;
 
-    domElems.defaultMessageDiv.style.display = "none";
-    domElems.gameOverMessageDiv.style.display = "none";
-    domElems.winMessageDiv.style.display = "none";
+    domElems.messageDiv.classList.add("hidden");
 
     // replace pac-man on game field
     pacMan.location = 490;

@@ -57,41 +57,20 @@ p {
 }
 
 .message {
-    display: none;
+    &.hidden {
+        display: none;
+    }
+
     position: absolute;
     z-index: 1;
     width: 100%;
     padding: 30px;
+    
+    background-color: $eggshell;
 
     text-transform: uppercase;
     border-top: 1px solid $blackish;
     border-bottom: 1px solid $blackish;
-
-    .back {
-        margin-right: auto;
-        width: 20px;
-        display: block;
-        text-decoration: none;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        color: $blackish;
-    }
-
-    &.default {
-        display: block;
-        background-color: $eggshell;
-    }
-    &.game-over {
-        background-color: $blackish;
-        color: $eggshell;
-        .back {
-            color: $eggshell;
-        }
-    }
-    &.win {
-        background-color: $eggshell;
-    }
 }
 
 .game-field {
