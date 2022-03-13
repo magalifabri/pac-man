@@ -14,6 +14,8 @@
     <!-- <link rel="icon" type="image/x-icon" href="../favicon.ico"> -->
     <link rel="stylesheet" href="./sass/style.css">
 
+    <script defer type="module" src="./js/index.js"></script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-17NGQKFE65"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -30,28 +32,43 @@
 </head>
 
 <body>
-    <div class="scoreboard hidden">
-        <button class="close-scoreboard">X</button>
-    </div>
 
-    <div class="game-field-container">
-        <div class="message">
-            <div class="variable-content">
-                <!-- JS MANIPULATED -->
-                <h1>PAC-MAN</h1>
-                <hr>
-                <h2>move to play</h2>
-                <p>wasd keys / arrow keys / swiping</p>
+    <?php if (empty($_SESSION['username'])) : ?>
+
+        <div class="username-form-screen">
+            <form action="" method="POST">
+                <input type="text" name="username" placeholder="username">
+            </form>
+        </div>
+
+    <?php else : ?>
+
+        <div class="scoreboard hidden">
+            <button class="close-scoreboard">X</button>
+        </div>
+
+        <div class="game-field-container">
+            <div class="message">
+                <div class="variable-content">
+                    <!-- JS MANIPULATED -->
+                    <h1>PAC-MAN</h1>
+                    <hr>
+                    <h2>move to play</h2>
+                    <p>wasd keys / arrow keys / swiping</p>
+                </div>
+                <button class="show-scoreboard">scoreboard</button>
+                <form action="" method="POST">
+                    <input class="username-display" type="text" name="username" value="<?= $_SESSION['username'] ?>">
+                </form>
             </div>
-            <button class="show-scoreboard">scoreboard</button>
+
+            <div class="game-field">
+                <!-- JS GENERATED -->
+            </div>
         </div>
 
-        <div class="game-field">
-            <!-- JS GENERATED -->
-        </div>
-    </div>
+    <?php endif ?>
 
-    <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>
