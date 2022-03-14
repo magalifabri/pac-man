@@ -45,6 +45,15 @@
 
         <div class="scoreboard hidden">
             <button class="close-scoreboard">X</button>
+            <table class="scores">
+                <tr class="header">
+                    <th>#</th>
+                    <th>score</th>
+                    <th>user</th>
+                    <th>date</th>
+                </tr>
+                <!-- JS GENERATED -->
+            </table>
         </div>
 
         <div class="game-field-container">

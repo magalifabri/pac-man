@@ -107,6 +107,37 @@ const refreshGameField = () => {
 };
 
 
+const loadScoreboard = () => {
+    const ScoresTable = document.querySelector("table.scores");
+
+    // empty scoreboard
+    const scoreTrs = document.querySelectorAll("table.scores tr:not(.header)");
+    for (const scoreTr of scoreTrs) {
+        scoreTr.remove();
+    }
+
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.addEventListener('load', event => {
+        // fill scoreboard
+        const scores = JSON.parse(event.target.response);
+        let scoreRanking = 1;
+        for (const score of scores) {
+            const newScoreTr = document.createElement("tr");
+            newScoreTr.innerHTML = `
+                <td>${scoreRanking++}</td>
+                <td>${score.score}</td>
+                <td>${score.username}</td>
+                <td>${score.date}</td>
+            `;
+
+            ScoresTable.append(newScoreTr);
+        }
+    });
+    xhttp.open("GET", `./php/getScores.php`);
+    xhttp.send();
+};
+
 const submitScore = () => {
     const xhttp = new XMLHttpRequest();
 
@@ -353,3 +384,6 @@ domElems.closeScoreboardButton.addEventListener("click", () => {
     domElems.scoreboardDiv.classList.add("hidden");
     game.scoreboardOpen = false;
 });
+
+document.querySelector(".show-scoreboard")
+    .addEventListener("click", loadScoreboard);

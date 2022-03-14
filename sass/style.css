@@ -49,6 +49,9 @@ p {
 .scoreboard.hidden {
   display: none;
 }
+.scoreboard .scores {
+  color: white;
+}
 
 .game-field-container {
   display: flex;
