@@ -73,6 +73,31 @@ p {
   display: none;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+button.show-scoreboard {
+  padding: 0.3em 1em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #11052c;
+  font-weight: 600;
+  background-color: #f7f4f2;
+  border: 1px solid #11052c;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+button.show-scoreboard:hover {
+  color: #f7f4f2;
+  background-color: #11052c;
+}
+
 .game-field {
   height: min(100vw, var(--view-port-height));
   width: min(100vw, var(--view-port-height));

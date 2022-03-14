@@ -65,10 +65,13 @@
                     <h2>move to play</h2>
                     <p>wasd keys / arrow keys / swiping</p>
                 </div>
-                <button class="show-scoreboard">scoreboard</button>
-                <form action="" method="POST">
-                    <input class="username-display" type="text" name="username" value="<?= $_SESSION['username'] ?>">
-                </form>
+
+                <div class="wrapper">
+                    <form action="" method="POST">
+                        <input class="username-display" type="text" name="username" value="<?= $_SESSION['username'] ?>">
+                    </form>
+                    <button class="show-scoreboard">scoreboard</button>
+                </div>
             </div>
 
             <div class="game-field">
