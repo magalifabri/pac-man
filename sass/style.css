@@ -81,6 +81,29 @@ p {
   margin-top: 1rem;
 }
 
+.username-display {
+  border: 1px solid #b3c0bb;
+  border-radius: 3px;
+  padding: 0.3em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  color: #11052c;
+  background-image: url("../images/pencil.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: right;
+  background-origin: content-box;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+.username-display:hover {
+  opacity: 1;
+}
+.username-display:focus {
+  opacity: 1;
+  background-position-x: 150%;
+}
+
 button.show-scoreboard {
   padding: 0.3em 1em;
   font-family: "Open Sans", sans-serif;

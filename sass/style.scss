@@ -103,6 +103,33 @@ p {
     margin-top: 1rem;
 }
 
+.username-display {
+    border: 1px solid $wall;
+    border-radius: 3px;
+    padding: .3em;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    color: $blackish;
+
+    background-image: url("../images/pencil.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: right;
+    background-origin: content-box;
+    opacity: .5;
+    
+    transition: all .3s ease-in-out;
+    
+    &:hover {
+        opacity: 1;
+    }
+    &:focus{
+        opacity: 1;
+        background-position-x: 150%;
+    }
+}
+
 button.show-scoreboard {
     padding: .3em 1em;
 

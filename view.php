@@ -68,7 +68,7 @@
 
                 <div class="wrapper">
                     <form action="" method="POST">
-                        <input class="username-display" type="text" name="username" value="<?= $_SESSION['username'] ?>">
+                        <input size="22" maxlength="20" class="username-display" type="text" name="username" value="<?= $_SESSION['username'] ?>">
                     </form>
                     <button class="show-scoreboard">scoreboard</button>
                 </div>
