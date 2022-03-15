@@ -129,7 +129,7 @@ p {
 }
 .username-display:focus {
   opacity: 1;
-  background-image: url("../images/enter.png");
+  background-image: url("../images/enter-key.png");
 }
 
 button.show-scoreboard {
