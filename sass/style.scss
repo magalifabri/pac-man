@@ -103,14 +103,26 @@ p {
     margin-top: 1rem;
 }
 
-.username-display {
+@mixin inputElemStyling {
     border: 1px solid $wall;
     border-radius: 3px;
-    padding: .3em;
-
+    padding: .3em .6em;
+    
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     color: $blackish;
+
+    transition: all .3s ease-in-out;
+}
+
+.username-form-screen input {
+    @include inputElemStyling();
+
+    text-align: center;
+}
+
+.username-display {
+    @include inputElemStyling();
 
     background-image: url("../images/pencil.svg");
     background-repeat: no-repeat;
@@ -119,14 +131,13 @@ p {
     background-origin: content-box;
     opacity: .5;
     
-    transition: all .3s ease-in-out;
-    
     &:hover {
         opacity: 1;
     }
     &:focus{
         opacity: 1;
-        background-position-x: 150%;
+        background-image: url("../images/enter.png");
+
     }
 }
 

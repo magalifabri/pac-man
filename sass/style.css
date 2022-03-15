@@ -81,27 +81,38 @@ p {
   margin-top: 1rem;
 }
 
-.username-display {
+.username-form-screen input {
   border: 1px solid #b3c0bb;
   border-radius: 3px;
-  padding: 0.3em;
+  padding: 0.3em 0.6em;
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   color: #11052c;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.username-display {
+  border: 1px solid #b3c0bb;
+  border-radius: 3px;
+  padding: 0.3em 0.6em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  color: #11052c;
+  transition: all 0.3s ease-in-out;
   background-image: url("../images/pencil.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: right;
   background-origin: content-box;
   opacity: 0.5;
-  transition: all 0.3s ease-in-out;
 }
 .username-display:hover {
   opacity: 1;
 }
 .username-display:focus {
   opacity: 1;
-  background-position-x: 150%;
+  background-image: url("../images/enter.png");
 }
 
 button.show-scoreboard {

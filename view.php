@@ -37,7 +37,7 @@
 
         <div class="username-form-screen">
             <form action="" method="POST">
-                <input type="text" name="username" placeholder="username">
+                <input size="22" maxlength="20" type="text" name="username" placeholder="username" required>
             </form>
         </div>
 
