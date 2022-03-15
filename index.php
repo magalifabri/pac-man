@@ -10,8 +10,13 @@ session_start();
 
 /* ------------------------------------ * ----------------------------------- */
 
+// FORM: username
 if (!empty($_POST['username'])) {
     $_SESSION['username'] = $_POST['username'];
+
+    // prevent form resubmission on page reload
+    header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
+    exit();
 }
 
 /* ------------------------------------ * ----------------------------------- */
