@@ -138,10 +138,33 @@ p {
     transition: all .3s ease-in-out;
 }
 
-.username-form-screen input {
-    @include inputElemStyling();
+.username-form-screen form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 
-    text-align: center;
+    input {
+        @include inputElemStyling();
+        
+        text-align: center;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+
+        opacity: .5;
+        transition: all .2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        img {
+            height: 4rem;
+        }
+    }
 }
 
 .username-display {

@@ -98,7 +98,13 @@ p {
   margin-top: 1rem;
 }
 
-.username-form-screen input {
+.username-form-screen form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.username-form-screen form input {
   border: 1px solid #b3c0bb;
   border-radius: 3px;
   padding: 0.3em 0.6em;
@@ -107,6 +113,18 @@ p {
   color: #11052c;
   transition: all 0.3s ease-in-out;
   text-align: center;
+}
+.username-form-screen form button {
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+.username-form-screen form button:hover {
+  opacity: 1;
+}
+.username-form-screen form button img {
+  height: 4rem;
 }
 
 .username-display {

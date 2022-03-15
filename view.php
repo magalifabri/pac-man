@@ -38,6 +38,9 @@
         <div class="username-form-screen">
             <form action="" method="POST">
                 <input size="22" maxlength="20" type="text" name="username" placeholder="username" required>
+                <button type="submit" name="submit">
+                    <img src="./images/enter.png" alt="">
+                </button>
             </form>
         </div>
 
