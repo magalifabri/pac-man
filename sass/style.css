@@ -52,6 +52,23 @@ p {
 .scoreboard .scores {
   color: white;
 }
+.scoreboard button.close-scoreboard {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: #11052c;
+  border: 1px solid #f7f4f2;
+  border-radius: 2px;
+  color: #f7f4f2;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+.scoreboard button.close-scoreboard:hover {
+  background-color: #f7f4f2;
+  color: #11052c;
+}
 
 .game-field-container {
   display: flex;
