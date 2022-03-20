@@ -47,7 +47,7 @@
     <?php else : ?>
 
         <div class="scoreboard hidden">
-            <button class="close-scoreboard">✕</button>
+            <button class="close-scoreboard"><span>✕</span></button>
             <table class="scores">
                 <tr class="header">
                     <th>#</th>

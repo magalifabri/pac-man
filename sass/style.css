@@ -39,15 +39,24 @@ p {
 
 .scoreboard {
   position: absolute;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
   background-color: #11052c;
-  z-index: 2;
 }
 .scoreboard.hidden {
   display: none;
+}
+.scoreboard th {
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
 }
 .scoreboard .scores {
   color: white;
@@ -56,9 +65,9 @@ p {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  width: 1.3em;
-  height: 1.3em;
-  background-color: #11052c;
+  width: 2em;
+  height: 2em;
+  background-color: rgba(17, 5, 44, 0.199);
   border: 1px solid #f7f4f2;
   border-radius: 2px;
   color: #f7f4f2;

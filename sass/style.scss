@@ -56,13 +56,25 @@ p {
     }
     
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: $blackish;
-    z-index: 2;
+    overflow: scroll;
 
+    display: flex;
+    justify-content: center;
+
+    padding: 1rem;
+    background-color: $blackish;
+
+    th {
+        font-weight: 300;
+        text-transform: uppercase;
+        border-bottom: 1px solid white;
+    }
+    
     .scores {
         color: white;
     }
@@ -72,10 +84,10 @@ p {
         top: 1rem;
         right: 1rem;
 
-        width: 1.3em;
-        height: 1.3em;
+        width: 2em;
+        height: 2em;
 
-        background-color: $blackish;
+        background-color: rgba(17, 5, 44, 0.199);
         border: 1px solid $eggshell;
         border-radius: 2px;
 
